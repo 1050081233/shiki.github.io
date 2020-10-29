@@ -6,4 +6,158 @@ grammar_cjkRuby: true
 ---
 
 
-欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过 `小书匠主按钮>模板` 里的模板管理来改变新建文章的内容。
+欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过 `小书匠主按钮>模板` 里的模板管理来改变新建文章的内容。 C#学习日记——独一无二的出现次数
+
+foreach遍历的用法
+
+foreach循环用于列举出集合中所有的元素，foreach语句中的表达式由关键字in隔开的两个项组成。in右边的项是集合名，in左边的项是变量名，用来存放该集合中的每个元素。
+
+用foreach循环一次性遍历a数组
+
+int[,,] a = new int[2, 2, 2] { {{ 1, 2 }, { 3,4}},{{ 5, 6 }, { 7,8}} };//定义一个2行2列2纵深的3维数组aforeach(int i in a){    Console .WriteLine (i);}
+
+这两种代码执行的结果是一样的都是 每行一个元素，共8行，元素分别是1 2 3 4 5 6 7 8
+
+转自https://www.runoob.com/w3cnote/csharp-foreach.html  //网址
+
+Dictionary的用法
+
+转自https://blog.csdn.net/zhaoguanghui2012/article/details/88105715  //网址
+
+HashSet的用法
+
+.NET 3.5在System.Collections.Generic命名空间中包含一个新的集合类：HashSet<T>。这个集合类包含不重复项的无序列表。这种集合称为“集(set)”。集是一个保留字，所以该类有另一个名称HashSet<T>。这个名称很容易理解，因为这个集合基于散列值，插入元素的操作非常快，不需要像List<T>类那样重排集合。
+
+HashSet<T>类提供的方法可以创建合集和交集。表10-12列出了改变集的值的方法。
+
+表  10-12
+
+HashSet的修改方法　　　　　　　　　　说    明
+
+Add()　　　　　　　　　　　　　　　　　　 如果某元素不在集合中，Add()方法就把该元素添加到集合中。在其返回值Boolean中，返回元素是否添加的信息
+
+Clear()　　　　　　　　　　　　　　　　　　方法Clear()删除集合中的所有元素
+
+Remove()　　　　　　　　　　　　　　　　  Remove()方法删除指定的元素
+
+RemoveWhere()　　　　　　　　　　　　　 RemoveWhere()方法需要一个Predicate委托作为参数。删除满足谓词条件的所有元素
+
+CopyTo()     　　　　　　　　　　　　　　   CopyTo()把集合中的元素复制到一个数组中
+
+ExceptWith()　　　　　　　　　　　　　　   ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
+
+IntersectWith() 　　　　　　　　　　　　　  IntersectWith()修改了集，仅包含所传送的集合和集中都有的元素
+
+UnionWith()   　　　　　　　　　　　　　　  UnionWith()方法把传送为参数的集合中的所有元素添加到集中
+
+表10-13列出了仅返回集的信息、不修改元素的方法。
+
+表  10-13
+
+HashSet的验证方法 　　　　　　　　　　说    明
+
+Contains()　　　　　　　　　　　　　　　　 如果所传送的元素在集合中，方法Contains()就返回true
+
+IsSubsetOf()   　　　　　　　　　　　　　　如果参数传送的集合是集的一个子集，方法IsSubsetOf()就返回true
+
+IsSupersetOf()　　　　　　　　　　　　　　如果参数传送的集合是集的一个超集，方法IsSupersetOf()就返回true
+
+Overlaps()　　　　　　　　　　　　　　　　 如果参数传送的集合中至少有一个元素与集中的元素相同，Overlaps()就返回true
+
+SetEquals()　　　　　　　　　　　　　　　　如果参数传送的集合和集包含相同的元素，方法SetEquals()就返回true
+
+在示例代码中，创建了3个字符串类型的新集，并用一级方程式汽车填充。HashSet<T>类实现了ICollection<T>接口。但是在该类中，Add()方法是显式实现的，还提供了另一个Add()方法。Add()方法的区别是返回类型，它返回一个布尔值，说明是否添加了元素。如果该元素已经在集中，就不添加它，并返回false。
+
+HashSet < string > companyTeams =new HashSet < string > (){ "Ferrari", "McLaren", "Toyota", "BMW","Renault", "Honda"};
+
+HashSet
+
+< string > traditionalTeams =new HashSet < string > (){ "Ferrari", "McLaren"};
+
+HashSet
+
+< string > privateTeams =new HashSet < string > (){ "Red Bull", "Toro Rosso", "Spyker","Super Aguri"};
+
+if (privateTeams.Add("Williams"))
+
+Console.WriteLine(
+
+"Williams added");
+
+if (!companyTeams.Add("McLaren"))
+
+Console.WriteLine(
+
+"McLaren was already in this set");
+
+转自https://www.cnblogs.com/xiaopin/archive/2011/01/08/1930540.html
+
+
+
+给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。
+
+如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。
+
+
+
+示例 1：
+
+输入：arr = [1,2,2,1,1,3]
+
+输出：true
+
+解释：在该数组中，1 出现了 3 次，2 出现了 2 次，3 只出现了 1 次。没有两个数的出现次数相同。
+
+示例 2：
+
+输入：arr = [1,2]
+
+输出：false
+
+示例 3：
+
+输入：arr = [-3,0,1,-3,1,1,1,-3,10,0]
+
+输出：true
+
+来源：力扣（LeetCode）
+
+链接：https://leetcode-cn.com/problems/unique-number-of-occurrences
+
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+解题
+
+public class Solution {
+
+    public bool UniqueOccurrences(int[] arr) {
+
+        var dict = new Dictionary<int,int>();
+
+        foreach(var i in arr){
+
+            if(!dict.ContainsKey(i))
+
+                dict.Add(i,0);
+
+            dict[i]++;
+
+        }
+
+        var hashSet = new HashSet<int>();
+
+        foreach(var pair in dict){
+
+            if(hashSet.Contains(pair.Value))
+
+                return false;
+
+            hashSet.Add(pair.Value);
+
+        }
+
+        return true;
+
+    }
+
+}
